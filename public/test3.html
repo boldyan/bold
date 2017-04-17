@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="info"></div>
+    <!--通过表单元素获取元素-->
+    <form action="/test2" method="get" id="form" enctype="multipart/form-data">
+        <!--enctype="multipart/form-data   上传文件"-->
+        <ul>
+            <li><label>文本输入框</label><input type="text" name="loginName"></li>
+            <li><label>密码输入框</label><input type="password" name="password"></li>
+            <li><input type="radio" name="radio"><label>单选按钮1</label></li>
+            <li><input type="radio" name="radio"><label>单选按钮2</label></li>
+            <li><input type="checkbox" name="checkbox"><label>多选按钮1</label></li>
+            <li><input type="checkbox" name="checkbox"><label>多选按钮2</label></li>
+            <li><input type="submit" name="submit" value="提交"></li>
+            <li><input type="image" name="img" src="images/img5.jpg" alt="图片按钮"></li>
+            <li><input type="reset" name="reset" value="重置"></li>
+            <li><input type="button" name="button" value="测试按钮"></li>
+            <li><input type="file" name="file" value="选择文件"></li>
+            <li><input type="hidden" name="hide" value="hide"></li>
+            <li><label>邮箱地址</label><input type="email" name="email"></li>
+            <li><label>电话号吗</label><input type="tel"></li>
+            <li><label>日期</label><input type="date"></li>
+        </ul>
+    </form>
+    <button onclick="getFormInfo()">点击获取表单信息</button>
+
+    <script src="vendor/bootstrap/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        function getFormInfo() {
+            var retHtml = "";
+            retHtml += "input元素有" + $("#form input").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中text属性有" + $("#form :text").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中password属性有" + $("#form :password").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中radio属性有" + $("#form :radio").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中checkbox属性有" + $("#form :checkbox").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中submit属性有" + $("#form :submit").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中image属性有" + $("#form :image").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中reset属性有" + $("#form :reset").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中button属性有" + $("#form :button").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中file属性有" + $("#form :file").length + "个这样的标签" + "<br>";
+            retHtml += "input元素中hidden属性有" + $("#form :hidden").length + "个这样的标签" + "<br>";
+            $("#info").html(retHtml);
+
+        }
+    </script>
+</body>
+</html>
